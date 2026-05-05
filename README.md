@@ -50,12 +50,12 @@ LegalEase BD is an AI-powered legal assistant specifically designed for Banglade
 └─────────────────────────────────────────────────────────────────────┘
                            │                    │
             ┌──────────────┘                    └──────────────┐
-            ▼                                                    ▼
-┌───────────────────────┐                        ┌───────────────────────┐
-│   CHROMADB (35K vectors) │                        │   BM25 (35K chunks)    │
-│   - Semantic search      │                        │   - Keyword search     │
-│   - Multilingual embeddings│                      │   - Legal stopwords    │
-└───────────────────────┘                        └───────────────────────┘
+            ▼                                                  ▼
+┌────────────────────────────┐                        ┌───────────────────────┐
+│   CHROMADB (35K vectors)   │                        │   BM25 (35K chunks)   │
+│   - Semantic search        │                        │   - Keyword search    │
+│   - Multilingual embeddings│                        │   - Legal stopwords   │
+└────────────────────────────┘                        └───────────────────────┘
                                     │
                                     ▼
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -67,11 +67,11 @@ LegalEase BD is an AI-powered legal assistant specifically designed for Banglade
                                     │
                                     ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         FINAL RESPONSE                              │
+│                        FINAL RESPONSE                               │
 │  📘 EXPLANATION - Plain language answer                             │
 │  ⚖️ LEGAL BASIS - Act name & section                                │
 │  🪜 NEXT STEPS - Concrete actions                                   │
-│  ⚠️ WARNING - Legal caveats                                        │
+│  ⚠️ WARNING - Legal caveats                                         │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
