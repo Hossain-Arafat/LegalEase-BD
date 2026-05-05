@@ -80,18 +80,63 @@ LegalEase BD is an AI-powered legal assistant specifically designed for Banglade
 ## 📁 Project Structure
 
 ```
-legalease-deploy/
-├── modal_llm.py           # LLM service (ChromaDB, BM25, search)
-├── modal_fastapi.py       # FastAPI gateway (routes requests)
-├── data/
-│   ├── chunks/            # JSON files with legal text
-│   │   ├── Acts_english.json
-│   │   └── Acts_bengali.json
-│   └── indexes/           # Generated search indexes
-│       ├── chroma_db/     # Vector database (35,472 vectors)
-│       └── bm25_final.pkl # Keyword index (35,472 chunks)
-├── requirements.txt       # Python dependencies
-└── README.md             # This file
+legalease/
+│
+├── README.md
+│
+├── frontend/
+│   ├── public/
+│   │   ├── favicon.svg
+│   │   └── icons.svg
+│   │
+│   ├── src/
+│   │   ├── assets/
+│   │   │   ├── hero.png
+│   │   │   ├── react.svg
+│   │   │   └── vite.svg
+│   │   │
+│   │   ├── components/
+│   │   │   └── Chatbot.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Chat.jsx
+│   │   │   └── Home.jsx
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   │
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── vercel.json
+│   ├── vite.config.js
+│   └── README.md
+│
+├── legalease_modal/
+│   ├── data/
+│   │   ├── chunks/
+│   │   │   ├── acts_bengali.json #not uploaded for size constraints
+│   │   │   └── acts_english.json #not uploaded for size constraints
+│   │   │
+│   │   └── indexes/ #scripts for building indexes are given
+│   │
+│   ├── scripts/
+│   │   ├── build_full_chromadb.py #scripts for building chromaDB index
+│   │   ├── build_indexes.py #Fixes dictionary format
+│   │   ├── rebuild_bm25.py #Building BM25 index
+│   │   ├── rebuild_local.py
+│   │   └── legalease_modal.py 
+│   │
+│   ├── modal_fastapi.py
+│   ├── modal_llm.py
+│   ├── prompt.md #some prompts across all domain to test the model
+│   ├── requirements.txt
+│   └── README.md #this file
+│
+└── .gitignore
 ```
 
 ---
