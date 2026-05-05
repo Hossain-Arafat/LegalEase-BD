@@ -16,7 +16,7 @@ LegalEase BD is an AI-powered legal assistant specifically designed for Banglade
 
 - ✅ **Bilingual Support** - Answers questions in English or Bengali
 - ✅ **Hybrid Search** - Combines ChromaDB (semantic) + BM25 (keyword)
-- ✅ **35,472 Legal Chunks** - Comprehensive coverage of Bangladeshi acts
+- ✅ **35K Legal Chunks** - Comprehensive coverage of Bangladeshi acts
 - ✅ **LLaMA-3-70B** - Powered by Groq's ultra-fast free tier
 - ✅ **Production Ready** - Deployed on Modal with auto-scaling
 - ✅ **Low Cost** - Free tier (Groq) + $30 Modal credit
