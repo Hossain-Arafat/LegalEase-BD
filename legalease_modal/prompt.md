@@ -112,7 +112,7 @@ Save this as `test_queries.py`:
 import requests
 import time
 
-API_URL = "https://merazuddin003--legalease-api-fastapi-app.modal.run/query"
+API_URL = "https://your-modal-endpoint.modal.run/query"
 
 test_queries = [
     # Criminal
