@@ -175,13 +175,6 @@ python rebuild_chromadb.py
 python rebuild_bm25.py
 ```
 
-Expected output:
-```
-Total chunks: 35472
-✅ ChromaDB built with 35472 vectors
-✅ BM25 built with 35472 chunks
-```
-
 ### Step 3: Upload to Modal
 
 ```bash
@@ -204,12 +197,12 @@ python -m modal deploy modal_fastapi.py
 
 ```bash
 # English query
-curl -X POST https://merazuddin003--legalease-api-fastapi-app.modal.run/query \
+curl -X POST https://your-modal-endpoint.modal.run/query \
   -H "Content-Type: application/json" \
   -d '{"query": "What is the punishment for murder?"}'
 
 # Bengali query  
-curl -X POST https://merazuddin003--legalease-api-fastapi-app.modal.run/query \
+curl -X POST https://your-modal-endpoint.modal.run/query \
   -H "Content-Type: application/json" \
   -d '{"query": "বাংলাদেশে হত্যার শাস্তি কী?"}'
 ```
@@ -221,7 +214,7 @@ curl -X POST https://merazuddin003--legalease-api-fastapi-app.modal.run/query \
 ### Endpoint
 
 ```
-POST https://merazuddin003--legalease-api-fastapi-app.modal.run/query
+POST https://your-modal-endpoint.modal.run/query
 ```
 
 ### Request Format
@@ -278,24 +271,13 @@ POST https://merazuddin003--legalease-api-fastapi-app.modal.run/query
 
 ### Modal Settings
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| `gpu` | T4 | GPU type for embeddings |
-| `memory` | 16384 | 16GB RAM |
-| `scaledown_window` | 300 | Idle timeout (seconds) |
-| `min_containers` | 1 | Keep one container warm |
+GPU-enabled deployment
 
 ---
 
 ## 💰 Cost Breakdown
 
-| Service | Tier | Cost |
-|---------|------|------|
-| **Modal** | Free credits | $30 (one-time) |
-| **Groq** | Free tier | $0 (30 req/min) |
-| **Total monthly** | - | **$0** (with credits) |
-
-After $30 Modal credits expire: ~$0.44/hour for GPU (~$316/month)
+Uses Groq free tier and Modal credits for low-cost deployment.
 
 ---
 
@@ -360,7 +342,7 @@ After $30 Modal credits expire: ~$0.44/hour for GPU (~$316/month)
 
 ```bash
 # Check if API is running
-curl https://merazuddin003--legalease-api-fastapi-app.modal.run/health
+curl https://your-modal-endpoint.modal.run/health
 
 # Check Modal logs
 modal logs legalease-llm
@@ -409,7 +391,7 @@ This project is proprietary and confidential.
 
 For issues or questions:
 - Check Modal logs: `modal logs legalease-llm`
-- Check FastAPI status: `https://merazuddin003--legalease-api-fastapi-app.modal.run/health`
+- Check FastAPI status: `https://your-modal-endpoint.modal.run/health`
 
 ---
 
@@ -431,7 +413,7 @@ python -m modal deploy modal_llm.py
 python -m modal deploy modal_fastapi.py
 
 # 5. Test
-curl -X POST https://merazuddin003--legalease-api-fastapi-app.modal.run/query \
+curl -X POST https://your-modal-endpoint.modal.run/query \
   -H "Content-Type: application/json" \
   -d '{"query": "What is the punishment for murder?"}'
 ```
