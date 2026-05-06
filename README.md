@@ -117,6 +117,9 @@ legalease/
 │
 ├── legalease_modal/
 │   ├── data/
+│   │   ├── Preprocessing/
+│   │   │   ├── filter_acts.py #for discarding repealed acts & filter active acts
+│   │   │   └── split_by_language #divide acts into Bengali & English
 │   │   ├── chunks/
 │   │   │   ├── acts_bengali.json #not uploaded for size constraints
 │   │   │   └── acts_english.json #not uploaded for size constraints
